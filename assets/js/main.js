@@ -37,12 +37,12 @@ const CONFIG = {
     { name: "Garmin", file: "garmin.png", mono: true }
   ],
   clients: [
-    { name: "IRONMAN", file: "ironman-brasil.png", mono: true },
+    { name: "IRONMAN Brasil", file: "ironman-brasil.png", mono: false },
     { name: "L'Étape Brasil", file: "letape-brasil.png", mono: false },
     { name: "Santander", file: "santander.png", mono: true },
     { name: "Vivo", file: "vivo.png", mono: true },
     { name: "Probiótica", file: "probiotica.png", mono: true },
-    { name: "Formação de Atletas CBC", file: "cbc-formacao.png", mono: true },
+    { name: "Comitê Brasileiro de Clubes", file: "cbc-clubes.png", mono: true },
     { name: "Maricá Games", file: "marica-games.png", mono: false },
     { name: "CF Brasília", file: "cf-brasilia.png", mono: false },
     { name: "Patagonman", file: "patagonman.png", mono: true },

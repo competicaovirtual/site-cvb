@@ -206,7 +206,7 @@ h4{font-size:26px;font-weight:800}
 .marquee__track{display:flex;align-items:center;gap:72px;width:max-content;animation:slide 50s linear infinite;padding:10px 0}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .client{height:78px;display:grid;place-items:center;flex:none}
-.client img{max-height:70px;max-width:180px;width:auto;object-fit:contain;opacity:.85;transition:opacity .3s,transform .3s}
+.client img{max-height:70px;max-width:260px;width:auto;object-fit:contain;opacity:.85;transition:opacity .3s,transform .3s}
 .client img.mono{filter:brightness(0) invert(1)}
 .client:hover img{opacity:1;transform:scale(1.06)}
 .client .logo-name{font-size:24px;color:#cfd8d3;white-space:nowrap}
