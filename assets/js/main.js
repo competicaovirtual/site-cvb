@@ -235,13 +235,11 @@ function buildContact() {
 function inlineYouTube() {
   document.querySelectorAll(".yt-inline").forEach((box) => {
     const id = box.dataset.yt;
-    const thumb = new Image();
-    thumb.onload = () => { const img = box.querySelector("img.media"); if (img) img.src = thumb.src; };
-    thumb.src = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
     const play = () => {
       if (box.classList.contains("is-playing")) return;
       const f = document.createElement("iframe");
-      f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+      const start = box.dataset.start ? `&start=${box.dataset.start}` : "";
+      f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0${start}`;
       f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
       f.allowFullscreen = true;
       f.title = box.dataset.title || "Vídeo";
