@@ -30,11 +30,11 @@ const CONFIG = {
   // Logos em assets/logos/ (PNG ou SVG com fundo transparente).
   // mono:true deixa o logo branco automaticamente; false mantém as cores.
   partners: [
-    { name: "ROUVY", file: "rouvy.png", mono: true },
-    { name: "Zwift", file: "zwift.png", mono: true },
+    { name: "ROUVY", file: "rouvy.png", mono: false },
+    { name: "Zwift", file: "zwift.png", mono: false },
     { name: "EXR", file: "exr.png", mono: true },
-    { name: "Technogym", file: "technogym.png", mono: true },
-    { name: "Garmin", file: "garmin.png", mono: true }
+    { name: "Technogym", file: "technogym.png", mono: false },
+    { name: "Garmin", file: "garmin.png", mono: false }
   ],
   clients: [
     { name: "IRONMAN Brasil", file: "ironman-brasil.png", mono: false },
