@@ -25,31 +25,32 @@ const CONFIG = {
   ],
 
   // Galeria: arquivos em assets/media/ (galeria-01.jpg … galeria-12.jpg)
-  gallery: 12,
+  gallery: 14,
 
   // Logos em assets/logos/ (PNG ou SVG com fundo transparente).
   // mono:true deixa o logo branco automaticamente; false mantém as cores.
   partners: [
     { name: "ROUVY", file: "rouvy.png", mono: true },
+    { name: "Zwift", file: "zwift.png", mono: true },
     { name: "EXR", file: "exr.png", mono: true },
-    { name: "Technogym", file: "technogym.png", mono: false },
-    { name: "Garmin", file: "garmin.png", mono: true },
-    { name: "Probiótica", file: "probiotica.png", mono: true }
+    { name: "Technogym", file: "technogym.png", mono: true },
+    { name: "Garmin", file: "garmin.png", mono: true }
   ],
   clients: [
-    { name: "IRONMAN Brasil", file: "ironman-brasil.png", mono: false },
+    { name: "IRONMAN", file: "ironman-brasil.png", mono: true },
     { name: "L'Étape Brasil", file: "letape-brasil.png", mono: false },
-    { name: "Vivo", file: "vivo.png", mono: true },
     { name: "Santander", file: "santander.png", mono: true },
+    { name: "Vivo", file: "vivo.png", mono: true },
+    { name: "Probiótica", file: "probiotica.png", mono: true },
     { name: "Formação de Atletas CBC", file: "cbc-formacao.png", mono: true },
     { name: "Maricá Games", file: "marica-games.png", mono: false },
     { name: "CF Brasília", file: "cf-brasilia.png", mono: false },
     { name: "Patagonman", file: "patagonman.png", mono: true },
     { name: "Amapá", file: "amapa.png", mono: false },
-    { name: "CBR · Remo", file: "cbr.png", mono: false },
+    { name: "Confederação Brasileira de Remo", file: "cbr.png", mono: false },
     { name: "CBDU", file: "cbdu.png", mono: true },
     { name: "CBDE", file: "cbde.png", mono: true },
-    { name: "Federação de Remo de Brasília", file: "frb.png", mono: false }
+    { name: "Federação de Remo de Brasília", file: "frb.png", mono: true }
   ]
 };
 
