@@ -43,6 +43,7 @@ const CONFIG = {
     { name: "Vivo", file: "vivo.png", mono: true },
     { name: "Probiótica", file: "probiotica.png", mono: true },
     { name: "Comitê Brasileiro de Clubes", file: "cbc-clubes.png", mono: true },
+    { name: "Formação de Atletas CBC", file: "cbc-formacao.png", mono: true },
     { name: "Maricá Games", file: "marica-games.png", mono: false },
     { name: "CF Brasília", file: "cf-brasilia.png", mono: false },
     { name: "Patagonman", file: "patagonman.png", mono: true },
@@ -164,14 +165,22 @@ function buildVideos() {
 }
 
 /* ---------- logos ---------- */
-function logoEl(item, cls) {
+function logoEl(item) {
   const wrap = document.createElement("div");
-  wrap.className = cls;
+  wrap.className = "logo-card";
   wrap.title = item.name;
   const img = new Image();
   img.alt = item.name;
-  if (cls === "logo-card" && !item.mono) img.classList.add("keep");
-  if (cls === "client" && item.mono) img.classList.add("mono");
+  if (item.mono) img.classList.add("mono");
+  // equilibra o tamanho visual: logos largos ficam mais baixos, logos quadrados (escudos) mais altos
+  img.onload = () => {
+    const ratio = img.naturalWidth / img.naturalHeight;
+    const h = Math.max(40, Math.min(88, Math.round(74 / Math.pow(ratio, 0.42))));
+    img.style.height = h + "px";
+    img.style.maxHeight = "none";
+    img.style.width = "auto";
+    img.style.maxWidth = "100%";
+  };
   img.onerror = () => {
     const t = document.createElement("span");
     t.className = "logo-name";
@@ -184,14 +193,9 @@ function logoEl(item, cls) {
 }
 function buildLogos() {
   const p = $("#partners");
-  CONFIG.partners.forEach((it) => p.appendChild(logoEl(it, "logo-card")));
+  CONFIG.partners.forEach((it) => p.appendChild(logoEl(it)));
   const c = $("#clients");
-  // duas voltas para o letreiro rodar sem emenda
-  [...CONFIG.clients, ...CONFIG.clients].forEach((it, i) => {
-    const el = logoEl(it, "client");
-    if (i >= CONFIG.clients.length) el.setAttribute("aria-hidden", "true");
-    c.appendChild(el);
-  });
+  CONFIG.clients.forEach((it) => c.appendChild(logoEl(it)));
 }
 
 /* ---------- contato ---------- */
