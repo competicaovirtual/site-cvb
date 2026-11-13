@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LANGS = {"en": 0, "es": 1, "fr": 2}
 HTML_LANG = {"en": "en", "es": "es", "fr": "fr"}
 ATTRS = ("alt", "aria-label", "placeholder", "content", "data-title", "title", "value")
-IGNORE = re.compile(r"^[\d\W_]+$|^(CVB|ROUVY|EXR|Zwift|Multi|Probiótica|JEBs Brasília|ROUVY × IRONMAN|L'Étape Brasil × Santander|GP Brasil CVB · Tour Parque da Cidade|Virtual L'Étape Brasil by Tour de France presented by Santander|#0A0F0D|PT|EN|ES|FR|Idioma)$")
+IGNORE = re.compile(r"^[\d\W_]+$|^(CVB|ROUVY|EXR|Zwift|Multi|Probiótica|JEBs Brasília|ROUVY × IRONMAN|L'Étape Brasil × Santander|GP Brasil CVB · Tour Parque da Cidade|Virtual L'Étape Brasil by Tour de France presented by Santander|#0A0F0D|PT|EN|ES|FR|Idioma|image/jpeg|pt_BR|summary_large_image|website)$")
 
 
 def build(lang):
@@ -54,6 +54,12 @@ def build(lang):
         target = "./" if other == lang else "../%s/" % other
         h = h.replace('href="%s/" data-lang="%s"' % (other, other), 'href="%s" data-lang="%s"' % (target, other))
     h = h.replace('<script src="../assets/js/main.js">', '<script src="../assets/js/main.js">')
+
+    # compartilhamento (WhatsApp, redes): imagem, endereço e idioma de cada versão
+    h = h.replace("assets/media/og-capa.jpg", "assets/media/og-capa-%s.jpg" % lang)
+    h = h.replace('content="https://www.competicaovirtual.com.br/">', 'content="https://www.competicaovirtual.com.br/%s/">' % lang)
+    h = h.replace('rel="canonical" href="https://www.competicaovirtual.com.br/"', 'rel="canonical" href="https://www.competicaovirtual.com.br/%s/"' % lang)
+    h = h.replace('content="pt_BR"', 'content="%s"' % {"en": "en_US", "es": "es_ES", "fr": "fr_FR"}[lang])
 
     d = ROOT / lang
     d.mkdir(exist_ok=True)

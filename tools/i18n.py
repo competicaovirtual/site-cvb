@@ -13,6 +13,7 @@ T = {
   ("Virtual competition. Real emotion. Virtual competitions and brand activations with simulators, giant screens and a live crowd.",
    "Competición virtual. Emoción real. Competiciones virtuales y activaciones de marca con simuladores, pantalla gigante y público en vivo.",
    "Compétition virtuelle. Émotion réelle. Compétitions virtuelles et activations de marque avec simulateurs, écran géant et public en direct."),
+"Competição virtual. Emoção real. Arena de ciclismo virtual com telão e público.": ("Virtual competition. Real emotion. Virtual cycling arena with giant screen and crowd.", "Competición virtual. Emoción real. Arena de ciclismo virtual con pantalla gigante y público.", "Compétition virtuelle. Émotion réelle. Arène de cyclisme virtuel avec écran géant et public."),
 "CVB · início": ("CVB · home", "CVB · inicio", "CVB · accueil"),
 "Competições": ("Brazilian", "Competiciones", "Compétitions"),
 "Virtuais Brasileiras": ("Virtual Competitions", "Virtuales Brasileñas", "Virtuelles Brésiliennes"),
