@@ -44,14 +44,14 @@ const CONFIG = {
     { name: "Probiótica", file: "probiotica.png", mono: true },
     { name: "Comitê Brasileiro de Clubes", file: "cbc-clubes.png", mono: true },
     { name: "Formação de Atletas CBC", file: "cbc-formacao.png", mono: true },
-    { name: "Maricá Games", file: "marica-games.png", mono: false },
-    { name: "CF Brasília", file: "cf-brasilia.png", mono: false },
-    { name: "Patagonman", file: "patagonman.png", mono: true },
+    { name: "Maricá Games", file: "marica-games.jpg", mono: false, tile: true },
+    { name: "GF Brasília", file: "gf-brasilia.png", mono: false },
+    { name: "Patagonman", file: "patagonman.png", mono: false },
     { name: "Amapá", file: "amapa.png", mono: false },
     { name: "Confederação Brasileira de Remo", file: "cbr.png", mono: false },
-    { name: "CBDU", file: "cbdu.png", mono: true },
-    { name: "CBDE", file: "cbde.png", mono: true },
-    { name: "Federação de Remo de Brasília", file: "frb.png", mono: true }
+    { name: "CBDU", file: "cbdu.png", mono: false },
+    { name: "CBDE", file: "cbde.png", mono: false },
+    { name: "Federação de Remo de Brasília", file: "frb.png", mono: false }
   ]
 };
 
@@ -172,10 +172,11 @@ function logoEl(item) {
   const img = new Image();
   img.alt = item.name;
   if (item.mono) img.classList.add("mono");
+  if (item.tile) img.classList.add("tile");
   // equilibra o tamanho visual: logos largos ficam mais baixos, logos quadrados (escudos) mais altos
   img.onload = () => {
     const ratio = img.naturalWidth / img.naturalHeight;
-    const h = Math.max(40, Math.min(88, Math.round(74 / Math.pow(ratio, 0.42))));
+    const h = item.tile ? 92 : Math.max(40, Math.min(88, Math.round(74 / Math.pow(ratio, 0.42))));
     img.style.height = h + "px";
     img.style.maxHeight = "none";
     img.style.width = "auto";
