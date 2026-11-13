@@ -1,0 +1,33 @@
+FOTOS E VÍDEOS DO SITE (pasta assets/media)
+============================================
+Coloque os arquivos com EXATAMENTE estes nomes. Se um arquivo faltar,
+o site mostra um bloco verde no lugar, com o nome esperado escrito.
+
+TOPO (tela cheia)
+  hero.mp4              vídeo de 10 a 20 s em loop, sem som, horizontal (arena, telão, público)
+  hero-poster.jpg       um quadro do mesmo vídeo (aparece enquanto o vídeo carrega)
+
+O QUE FAZEMOS
+  sol-competicoes.jpg   foto de competição (atletas + telão), horizontal
+  sol-ativacoes.mp4     vídeo curto de ativação com público (feira, shopping, evento)
+  sol-ativacoes.jpg     quadro desse vídeo
+
+MODALIDADES (verticais funcionam melhor)
+  mod-ciclismo.jpg   mod-remo.jpg   mod-corrida.jpg   mod-triathlon.jpg
+
+FAIXA DE VÍDEO NO MEIO DA PÁGINA
+  arena-loop.mp4        vídeo em loop, horizontal
+  arena-loop.jpg        quadro desse vídeo
+
+CASES
+  case-jebs-2025.jpg (destaque grande)   case-aracaju-2024.jpg   case-letape.jpg
+  case-remo.jpg   case-pampulha.jpg   case-grand-final.jpg
+
+GALERIA
+  galeria-01.jpg … galeria-12.jpg (qualquer formato; a grade se ajusta)
+
+COMPARTILHAMENTO (WhatsApp/redes)
+  og-capa.jpg           1200 x 630
+
+Claude cuida da otimização: redimensiona, comprime e apaga os metadados
+(GPS, modelo do celular, data, autor) antes de publicar.
