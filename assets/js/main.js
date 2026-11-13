@@ -40,7 +40,7 @@ const CONFIG = {
     { name: "IRONMAN Brasil", file: "ironman-brasil.png", mono: false },
     { name: "L'Étape Brasil", file: "letape-brasil.png", mono: false },
     { name: "Santander", file: "santander.png", mono: true },
-    { name: "Vivo", file: "vivo.png", mono: true },
+    { name: "Vivo", file: "vivo.png", mono: false },
     { name: "Probiótica", file: "probiotica.png", mono: true },
     { name: "Comitê Brasileiro de Clubes", file: "cbc-clubes.png", mono: true },
     { name: "Maricá Games", file: "marica-games.jpg", mono: false, tile: true },
