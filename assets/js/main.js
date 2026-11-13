@@ -234,23 +234,27 @@ function buildContact() {
 }
 
 
-/* ---------- vídeo do YouTube dentro de um bloco (Transmissão ao vivo) ---------- */
+/* ---------- vídeo do YouTube dentro de um bloco: toca sozinho, sem som, quando aparece na tela ---------- */
 function inlineYouTube() {
-  document.querySelectorAll(".yt-inline").forEach((box) => {
+  const start = (box) => {
+    if (box.classList.contains("is-playing")) return;
     const id = box.dataset.yt;
-    const play = () => {
-      if (box.classList.contains("is-playing")) return;
-      const f = document.createElement("iframe");
-      const start = box.dataset.start ? `&start=${box.dataset.start}` : "";
-      f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0${start}`;
-      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      f.allowFullscreen = true;
-      f.title = box.dataset.title || "Vídeo";
-      box.appendChild(f);
-      box.classList.add("is-playing");
-    };
-    box.addEventListener("click", play);
-    box.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); } });
+    const t = box.dataset.start ? `&start=${box.dataset.start}` : "";
+    const f = document.createElement("iframe");
+    f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1${t}`;
+    f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    f.allowFullscreen = true;
+    f.title = box.dataset.title || "Vídeo";
+    box.appendChild(f);
+    box.classList.add("is-playing");
+  };
+  const io = new IntersectionObserver((ents) => {
+    ents.forEach((e) => { if (e.isIntersecting) { start(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.35 });
+  document.querySelectorAll(".yt-inline").forEach((box) => {
+    io.observe(box);
+    box.addEventListener("click", () => start(box));
+    box.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); start(box); } });
   });
 }
 
