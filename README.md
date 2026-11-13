@@ -13,3 +13,8 @@ Quando um arquivo de mídia ou logo ainda não existe, o site mostra um bloco no
 
 ## Publicação
 GitHub Pages, a partir da branch `main` e da pasta raiz.
+
+## Idiomas
+O `index.html` (português) é a fonte. As versões `en/`, `es/` e `fr/` são geradas por `python3 tools/build_i18n.py`,
+usando as traduções de `tools/i18n.py`. Depois de mudar um texto em português, atualize a tradução e rode o script.
+Textos gerados pelo JavaScript (formulário, legendas) ficam em `I18N`, no `assets/js/main.js`.
